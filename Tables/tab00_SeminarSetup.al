@@ -4,23 +4,23 @@ table 50100 "CSD Seminar Setup"
 
     fields
     {
-        field(10; "Primary Key"; Code[10]
+        field(10; "Primary Key"; Code[10])
         {
-            Caption("Primary Key");
+            Caption = 'Primary Key';
         }
-        field(20; "Seminar Nos."; Code[20]
+        field(20; "Seminar Nos."; Code[20])
         {
-            caption("Seminar Nos.");
+            caption = 'Seminar Nos.';
             TableRelation = "No. Series";
         }
-        field(30; "Seminar Registraiton Nos."; Code[20]
+        field(30; "Seminar Registraiton Nos."; Code[20])
         {
-            Caption("Seminar Registraiton Nos.");
+            Caption = 'Seminar Registraiton Nos.';
             TableRelation = "No. Series";
         }
-        field(40; "Posted Seminar Reg. Nos."; Code[20]
+        field(40; "Posted Seminar Reg. Nos."; Code[20])
         {
-            Caption("Posted Seminar Reg. Nos.");
+            Caption = 'Posted Seminar Reg. Nos.';
             TableRelation = "No. Series";
         }
 
