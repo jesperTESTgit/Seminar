@@ -1,5 +1,5 @@
 pageextension 50100 "CSD ResourceCardExt" extends "Resource Card"
-// CSD1.00 test
+// CSD1.00 test v2
 {
     layout
     {
