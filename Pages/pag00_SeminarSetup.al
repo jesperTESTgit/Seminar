@@ -18,7 +18,7 @@ page 50100 "CSD Seminar Setup"
                 field("Seminar Nos."; "Seminar Nos.")
                 {
                 }
-                field("Seminar Registration Nos."; "Seminar Registraiton Nos.")
+                field("Seminar Registration Nos."; "Seminar Registration Nos.")
                 {
                 }
                 field("Posted Seminar Reg. Nos."; "Posted Seminar Reg. Nos.")
