@@ -8,7 +8,7 @@ page 50139  "CSD Posted Seminar Charges"
     Caption = 'Seminar Charges';
     Editable = false;
     PageType = List;
-    SourceTable = Table50121;
+    SourceTable = "CSD Posted Seminar Charge";
 
     layout
     {

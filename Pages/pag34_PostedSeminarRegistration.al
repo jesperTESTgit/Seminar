@@ -1,4 +1,4 @@
-page 50134  "CSD Posted Seminar Reg."
+page 50134 "CSD Posted Seminar Reg."
 {
     // CSD1.00 - 2018-01-01 - D. E. Veloper
     //   Chapter 7 - Lab 3
@@ -7,7 +7,7 @@ page 50134  "CSD Posted Seminar Reg."
     Caption = 'Seminar Registration';
     Editable = false;
     PageType = Document;
-    SourceTable = Table50118;
+    SourceTable = "CSD Seminar Register";
 
     layout
     {
@@ -15,44 +15,44 @@ page 50134  "CSD Posted Seminar Reg."
         {
             group(General)
             {
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Starting Date";"Starting Date")
+                field("Starting Date"; "Starting Date")
                 {
                 }
-                field("Seminar No.";"Seminar No.")
+                field("Seminar No."; "Seminar No.")
                 {
                 }
-                field("Seminar Name";"Seminar Name")
+                field("Seminar Name"; "Seminar Name")
                 {
                 }
-                field("Instructor Resource No.";"Instructor Resource No.")
+                field("Instructor Resource No."; "Instructor Resource No.")
                 {
                 }
-                field("Instructor Name";"Instructor Name")
+                field("Instructor Name"; "Instructor Name")
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Document Date";"Document Date")
+                field("Document Date"; "Document Date")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field(Duration;Duration)
+                field(Duration; Duration)
                 {
                 }
-                field("Minimum Participants";"Minimum Participants")
+                field("Minimum Participants"; "Minimum Participants")
                 {
                 }
-                field("Maximum Participants";"Maximum Participants")
+                field("Maximum Participants"; "Maximum Participants")
                 {
                 }
             }
-            part(SeminarRegistrationLines;50135)
+            part(SeminarRegistrationLines; 50135)
             {
                 SubPageLink = Document No.=Field(No.);
             }
@@ -127,7 +127,7 @@ page 50134  "CSD Posted Seminar Reg."
                 {
                     Caption = 'Co&mments';
                     Image = Comment;
-                    RunObject = Page 50106;
+                    RunObject = Page "CSD Seminar Comment Sheet";
                     RunPageLink = No.=Field(No.);
                     RunPageView = where(Document Type=const(Posted Seminar Registration));
                 }
