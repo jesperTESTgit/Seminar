@@ -8,6 +8,7 @@ table 50100 "CSD Seminar Setup"
         {
             Caption = 'Primary Key';
         }
+
         field(20; "Seminar Nos."; Code[20])
         {
             caption = 'Seminar Nos.';
