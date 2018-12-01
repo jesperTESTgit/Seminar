@@ -12,9 +12,9 @@ table 50101 "CSD Seminar"
 
             trigger OnValidate();
             begin
-                if "No." <> xRec."No." then begin
-                    SeminarSetup.GET;
-                    NoSeriesMgt.TestManual(SeminarSetup."Seminar Nos.");
+                if "No." <> xRec."No." then begin 
+                    SeminarSetup.GET; 
+                    NoSeriesMgt.TestManual(SeminarSetup."Seminar Nos."); 
                     "No. Series" := '';
                 end;
             end;
@@ -25,30 +25,22 @@ table 50101 "CSD Seminar"
 
             trigger OnValidate();
             begin
-                if ("Search Name" = UpperCase(xRec.Name)) or ("Search Name" = '') then
+                if("Search Name" = UpperCase(xRec.Name)) or("Search Name" = '') then
                     "Search Name" := Name;
-            end;
+            end;        
         }
         field(30; "Seminar Duration"; Decimal)
         {
             Caption = 'Seminar Duration';
-            DecimalPlaces = 0 : 1;
-            MinValue = 0;
+            DecimalPlaces=0:1;
         }
         field(40; "Minimum Participants"; Integer)
         {
             Caption = 'Minimum Participants';
-            MinValue = 0;
         }
         field(50; "Maximum Participants"; Integer)
         {
             Caption = 'Maximum Participants';
-            MaxValue = 30;
-            trigger OnValidate()
-            begin
-                if "Minimum Participants" >= "Maximum Participants" then
-                    Error('Maximum Particpants can not be lower than "Minimum Participants');
-            end;
         }
         field(60; "Search Name"; Code[50])
         {
@@ -68,12 +60,11 @@ table 50101 "CSD Seminar"
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = exist ("CSD Seminar Comment Line" where ("Table Name" = filter ("Seminar"), "No." = Field ("No.")));
+            CalcFormula = exist("CSD Seminar Comment Line" where("Table Name"=filter("Seminar"),"No."=Field("No.")));
         }
         field(100; "Seminar Price"; Decimal)
         {
             Caption = 'Seminar Price';
-            MinValue = 0;
         }
         field(110; "Gen. Prod. Posting Group"; code[10])
         {
@@ -82,7 +73,7 @@ table 50101 "CSD Seminar"
 
             trigger OnValidate();
             begin
-                if (xRec."Gen. Prod. Posting Group" <> "Gen. Prod. Posting Group") then begin
+                if(xRec."Gen. Prod. Posting Group" <> "Gen. Prod. Posting Group") then begin
                     if GenProdPostingGroup.ValidateVatProdPostingGroup(GenProdPostingGroup, "Gen. Prod. Posting Group") then
                         Validate("VAT Prod. Posting Group", GenProdPostingGroup."Def. VAT Prod. Posting Group");
                 end;
@@ -134,9 +125,9 @@ table 50101 "CSD Seminar"
     trigger OnDelete();
     begin
         CommentLine.Reset;
-        CommentLine.SetRange("Table Name", CommentLine."Table Name"::Seminar);
+        CommentLine.SetRange("Table Name", CommentLine."Table Name"::Seminar); 
         CommentLine.SetRange("No.", "No.");
-        CommentLine.DeleteAll;
+        CommentLine.DeleteAll; 
     end;
 
     trigger OnRename();
@@ -146,7 +137,8 @@ table 50101 "CSD Seminar"
 
     procedure AssistEdit(): Boolean;
     begin
-        with Seminar do begin
+        with Seminar do
+        begin
             Seminar := Rec;
             SeminarSetup.get;
             SeminarSetup.TestField("Seminar Nos.");
