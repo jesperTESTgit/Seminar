@@ -5,10 +5,10 @@ page 50139  "CSD Posted Seminar Charges"
     //     - Created new page
 
     AutoSplitKey = true;
-    Caption = 'Seminar Charges';
+    Caption = 'Posted Seminar Charges';
     Editable = false;
     PageType = List;
-    SourceTable = Table50121;
+    SourceTable = "CSD Posted Seminar Charge";
 
     layout
     {

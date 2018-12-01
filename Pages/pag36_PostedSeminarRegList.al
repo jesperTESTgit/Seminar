@@ -4,11 +4,12 @@ page 50136  "CSD Posted Seminar Reg. List"
     //   Chapter 7 - Lab 3
     //     - Created new page
 
-    Caption = 'Seminar Registration List';
+    Caption = 'Posted Seminar Registration List';
     CardPageID =  "CSD Posted Seminar Reg.";
     Editable = false;
     PageType = List;
-    SourceTable = Table50118;
+    SourceTable = "CSD Posted Seminar Reg. Header";
+    UsageCategory=Documents;
 
     layout
     {
@@ -44,14 +45,14 @@ page 50136  "CSD Posted Seminar Reg. List"
         }
         area(factboxes)
         {
-            part(;50117)
+            part("Seminar Details FactBox";"CSD Seminar Details FactBox")
             {
-                SubPageLink = No.=Field(Seminar No.);
+                SubPageLink = "No."=Field("Seminar No.");
             }
-            systempart(;Links)
+            systempart("Links";Links)
             {
             }
-            systempart(;Notes)
+            systempart("Notes";Notes)
             {
             }
         }
@@ -68,16 +69,16 @@ page 50136  "CSD Posted Seminar Reg. List"
                 {
                     Caption = 'Co&mments';
                     Image = Comment;
-                    RunObject = Page 50106;
-                    RunPageLink = No.=Field(No.);
-                    RunPageView = where(Document Type=const(Posted Seminar Registration));
+                    RunObject = page "CSD Seminar Comment List";
+                    RunPageLink = "No."=Field("No.");
+                    RunPageView = where("Table Name"=const("Posted Seminar Registration"));
                 }
                 action("&Charges")
                 {
                     Caption = '&Charges';
                     Image = Costs;
-                    RunObject = Page 50139;
-                    RunPageLink = Document No.=Field(No.);
+                    RunObject = Page "CSD Posted Seminar Charges";
+                    RunPageLink = "Document No."=Field("No.");
                 }
             }
         }

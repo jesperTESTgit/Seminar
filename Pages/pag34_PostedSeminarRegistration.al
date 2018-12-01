@@ -4,10 +4,10 @@ page 50134  "CSD Posted Seminar Reg."
     //   Chapter 7 - Lab 3
     //     - Created new page
 
-    Caption = 'Seminar Registration';
+    Caption = 'Posted Seminar Registration';
     Editable = false;
     PageType = Document;
-    SourceTable = Table50118;
+    SourceTable = "CSD Posted Seminar Reg. Header";
 
     layout
     {
@@ -52,9 +52,9 @@ page 50134  "CSD Posted Seminar Reg."
                 {
                 }
             }
-            part(SeminarRegistrationLines;50135)
+            part(SeminarRegistrationLines; "CSD Post Seminar Reg. Subpage")
             {
-                SubPageLink = Document No.=Field(No.);
+                SubPageLink = "Document No."=Field("No.");
             }
             group("Seminar Room")
             {
@@ -98,19 +98,19 @@ page 50134  "CSD Posted Seminar Reg."
         }
         area(factboxes)
         {
-            part(;50117)
+            part("Seminar Details FactBox";"CSD Seminar Details FactBox")
             {
-                SubPageLink = No.=Field(Seminar No.);
+                SubPageLink = "No."=Field("Seminar No.");
             }
-            part(;9084)
+            part("Customer Details FactBox";"Customer Details FactBox")
             {
                 Provider = SeminarRegistrationLines;
-                SubPageLink = No.=Field(Bill-to Customer No.);
+                SubPageLink = "No."=Field("Bill-to Customer No.");
             }
-            systempart(;Links)
+            systempart("Links";Links)
             {
             }
-            systempart(;Notes)
+            systempart("Notes";Notes)
             {
             }
         }
@@ -127,16 +127,16 @@ page 50134  "CSD Posted Seminar Reg."
                 {
                     Caption = 'Co&mments';
                     Image = Comment;
-                    RunObject = Page 50106;
-                    RunPageLink = No.=Field(No.);
-                    RunPageView = where(Document Type=const(Posted Seminar Registration));
+                    RunObject = page "CSD Seminar Comment List";
+                    RunPageLink = "No."=Field("No.");
+                    RunPageView = where("Table Name"=const("Posted Seminar Registration"));
                 }
                 action("&Charges")
                 {
                     Caption = '&Charges';
                     Image = Costs;
-                    RunObject = Page 50139;
-                    RunPageLink = Document No.=Field(No.);
+                    RunObject = Page  "CSD Posted Seminar Charges";
+                    RunPageLink = "Document No."=Field("No.");
                 }
             }
         }
